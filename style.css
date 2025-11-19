@@ -1,0 +1,175 @@
+/* ------------------------- */
+/* PALETA DE COLORES GLOBAL */
+/* ------------------------- */
+
+:root {
+    --verde: #009B3A;
+    --verde-oscuro: #00782E;
+
+    /* Modo oscuro */
+    --bg-dark: #1A1D1F;
+    --card-dark: rgba(35, 38, 41, 0.6);
+    --texto-dark: #F5F5F5;
+
+    /* Modo claro */
+    --bg-light: #F5F5F5;
+    --card-light: rgba(255,255,255,0.6);
+    --texto-light: #1A1D1F;
+
+    --blur: 18px;
+    --radius: 12px;
+    --shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+/* ESTILOS SEGÚN MODO */
+
+html[data-theme="dark"] {
+    --bg: var(--bg-dark);
+    --card: var(--card-dark);
+    --texto: var(--texto-dark);
+}
+
+html[data-theme="light"] {
+    --bg: var(--bg-light);
+    --card: var(--card-light);
+    --texto: var(--texto-light);
+}
+
+/* ------------------------- */
+/* ESTILO GENERAL            */
+/* ------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--texto);
+    font-family: "Poppins", sans-serif;
+    transition: 0.4s;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--card);
+    color: var(--texto);
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    width: 160px;
+    margin-bottom: 10px;
+}
+
+h1, .sub {
+    color: var(--texto);
+}
+
+/* ----------------------------- */
+/* BUSCADOR                     */
+/* ----------------------------- */
+
+.buscador-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px;
+}
+
+.buscador-container input {
+    width: 360px;
+    padding: 14px;
+    border-radius: var(--radius);
+    border: none;
+    outline: none;
+    background: var(--card);
+    backdrop-filter: blur(var(--blur));
+    color: var(--texto);
+    box-shadow: var(--shadow);
+}
+
+.buscador-container button {
+    background: var(--verde);
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s;
+    box-shadow: var(--shadow);
+}
+
+.buscador-container button:hover {
+    background: var(--verde-oscuro);
+    transform: scale(1.05);
+}
+
+/* ----------------------------- */
+/* TABLA                        */
+/* ----------------------------- */
+
+.tabla-container {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    color: var(--texto);
+    border-radius: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--shadow);
+}
+
+th {
+    background: var(--verde);
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--texto);
+}
+
+tr:hover td {
+    background: rgba(255,255,255,0.07);
+    transition: 0.2s;
+}
+
+/* ----------------------------- */
+/* BOTÓN MODO OSCURO / CLARO   */
+/* ----------------------------- */
+
+#modoBtn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--card);
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--shadow);
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 0.3s;
+    color: var(--texto);
+
+    /* ⭐ LO IMPORTANTE: que esté por encima de todo */
+    z-index: 9999;
+}
+
+
+#modoBtn:hover {
+    transform: scale(1.1);
+}
