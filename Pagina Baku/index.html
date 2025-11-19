@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo BAKU - Beta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="img/logo.jpg" alt="BAKU Logo" class="logo">
+        <h1>Catálogo de Repuestos - BAKU</h1>
+        <p class="sub">Versión Beta • Demostración de diseño y funcionalidad</p>
+    </header>
+    <button id="modoBtn" onclick="toggleModo()">🌙</button>
+
+
+    <!-- BUSCADOR -->
+    <section class="buscador-container">
+        <input type="text" id="buscador" placeholder="Buscar modelo, marca o repuesto...">
+        <button onclick="buscar()">Buscar</button>
+    </section>
+
+    <!-- TABLA -->
+    <section class="tabla-container">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Tipo</th>
+                    <th>Modelo</th>
+                    <th>Precio Técnico</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+
+            <tbody id="resultado">
+                <!-- DATOS DE PRUEBA -->
+<tr><td>1</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE 11</td><td>$25.000</td><td>NEGRO</td></tr>
+<tr><td>2</td><td>SAMSUNG</td><td>PANTALLA</td><td>A12</td><td>$18.000</td><td>NEGRO</td></tr>
+<tr><td>3</td><td>XIAOMI</td><td>BATERÍA</td><td>REDMI NOTE 10</td><td>$12.000</td><td>BLANCO</td></tr>
+<tr><td>4</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE XR</td><td>$22.000</td><td>NEGRO</td></tr>
+<tr><td>5</td><td>SAMSUNG</td><td>PANTALLA</td><td>A32</td><td>$24.000</td><td>NEGRO</td></tr>
+<tr><td>6</td><td>XIAOMI</td><td>PANTALLA</td><td>MI 11 LITE</td><td>$28.000</td><td>NEGRO</td></tr>
+<tr><td>7</td><td>APPLE</td><td>BATERÍA</td><td>IPHONE 7</td><td>$8.000</td><td>NEGRO</td></tr>
+<tr><td>8</td><td>SAMSUNG</td><td>BATERÍA</td><td>A20</td><td>$10.000</td><td>NEGRO</td></tr>
+<tr><td>9</td><td>XIAOMI</td><td>PANTALLA</td><td>REDMI 9A</td><td>$15.000</td><td>NEGRO</td></tr>
+<tr><td>10</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE 8 PLUS</td><td>$18.000</td><td>BLANCO</td></tr>
+<tr><td>11</td><td>SAMSUNG</td><td>PANTALLA</td><td>S20 FE</td><td>$38.000</td><td>NEGRO</td></tr>
+<tr><td>12</td><td>XIAOMI</td><td>BATERÍA</td><td>POCO X3</td><td>$13.000</td><td>NEGRO</td></tr>
+<tr><td>13</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE SE 2020</td><td>$20.000</td><td>NEGRO</td></tr>
+<tr><td>14</td><td>SAMSUNG</td><td>PANTALLA</td><td>A51</td><td>$22.000</td><td>NEGRO</td></tr>
+<tr><td>15</td><td>XIAOMI</td><td>PANTALLA</td><td>REDMI NOTE 9</td><td>$18.000</td><td>BLANCO</td></tr>
+<tr><td>16</td><td>APPLE</td><td>BATERÍA</td><td>IPHONE X</td><td>$14.000</td><td>NEGRO</td></tr>
+<tr><td>17</td><td>SAMSUNG</td><td>BATERÍA</td><td>A52</td><td>$12.500</td><td>NEGRO</td></tr>
+<tr><td>18</td><td>XIAOMI</td><td>PANTALLA</td><td>REDMI NOTE 11</td><td>$25.000</td><td>NEGRO</td></tr>
+<tr><td>19</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE 12</td><td>$45.000</td><td>NEGRO</td></tr>
+<tr><td>20</td><td>SAMSUNG</td><td>PANTALLA</td><td>S10</td><td>$40.000</td><td>BLANCO</td></tr>
+<tr><td>21</td><td>XIAOMI</td><td>BATERÍA</td><td>REDMI 10C</td><td>$11.000</td><td>NEGRO</td></tr>
+<tr><td>22</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE 6S</td><td>$13.000</td><td>BLANCO</td></tr>
+<tr><td>23</td><td>SAMSUNG</td><td>PANTALLA</td><td>A30</td><td>$17.000</td><td>NEGRO</td></tr>
+<tr><td>24</td><td>XIAOMI</td><td>PANTALLA</td><td>MI A3</td><td>$16.000</td><td>NEGRO</td></tr>
+<tr><td>25</td><td>APPLE</td><td>BATERÍA</td><td>IPHONE 11</td><td>$16.000</td><td>NEGRO</td></tr>
+<tr><td>26</td><td>SAMSUNG</td><td>PANTALLA</td><td>A03 CORE</td><td>$14.000</td><td>NEGRO</td></tr>
+<tr><td>27</td><td>XIAOMI</td><td>BATERÍA</td><td>POCO M3</td><td>$12.000</td><td>NEGRO</td></tr>
+<tr><td>28</td><td>APPLE</td><td>PANTALLA</td><td>IPHONE 13</td><td>$55.000</td><td>NEGRO</td></tr>
+<tr><td>29</td><td>SAMSUNG</td><td>PANTALLA</td><td>S21</td><td>$60.000</td><td>NEGRO</td></tr>
+<tr><td>30</td><td>XIAOMI</td><td>PANTALLA</td><td>REDMI NOTE 8</td><td>$15.000</td><td>NEGRO</td></tr>
+
+            </tbody>
+        </table>
+    </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
